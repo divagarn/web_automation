@@ -22,21 +22,15 @@
 <body>
     <h1>Welcome to Haystack</h1>
 
-    <!-- Form to enter IP address and filter by DATE (YYYY_MM_DD) -->
     <form method="post">
         {% csrf_token %}
         <label for="ip">Enter your IP address:</label>
         <input type="text" id="ip" name="ip" required><br><br>
 
-        <!-- Input field for filtering by DATE (YYYY_MM_DD) -->
-        <label for="date_filter">Filter by DATE (YYYY_MM_DD):</label>
-        <input type="text" id="date_filter" name="date_filter" placeholder="YYYY_MM_DD"><br><br>
-
         <input type="hidden" name="table_name" value="HAYSTACK_DISINFECT_REPORT">
         <input type="submit" value="Connect and Apply Filter">
     </form>
 
-    <!-- Display columns of the selected table -->
     <h2>Columns of the Selected Table:</h2>
     <ul>
         {% if columns %}
@@ -48,7 +42,6 @@
         {% endif %}
     </ul>
 
-    <!-- Display table data in tabular format -->
     <h2>Data from the Selected Table:</h2>
     <table>
         <thead>
